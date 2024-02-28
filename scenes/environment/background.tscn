@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://rxeeiuswfa15"]
+[gd_scene load_steps=7 format=3 uid="uid://rxeeiuswfa15"]
 
 [ext_resource type="Texture2D" uid="uid://bkxac2ceaejas" path="res://assets/tile/parallax_background/layer_1.png" id="1_1sxbh"]
+[ext_resource type="Script" path="res://scripts/environment/background.gd" id="1_k03bp"]
 [ext_resource type="Texture2D" uid="uid://ufl0h53fqyl5" path="res://assets/tile/parallax_background/layer_2.png" id="2_5ur6i"]
 [ext_resource type="Texture2D" uid="uid://g3mee2cinp3" path="res://assets/tile/parallax_background/layer_3.png" id="3_gfqog"]
 [ext_resource type="Texture2D" uid="uid://cev8ssoe6y22w" path="res://assets/tile/parallax_background/layer_4.png" id="4_6hoe0"]
+[ext_resource type="PackedScene" uid="uid://bj16cc28qqefh" path="res://scenes/environment/mask.tscn" id="6_xuj7j"]
 
 [node name="Background" type="ParallaxBackground"]
+script = ExtResource("1_k03bp")
+layer_speed = Array[int]([20, 15, 10, 5])
 
 [node name="Layer4" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(320, 180)
@@ -41,3 +45,6 @@ motion_mirroring = Vector2(320, 0)
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_gfqog")
+
+[node name="Mask" parent="." instance=ExtResource("6_xuj7j")]
+color = Color(0.431373, 0.431373, 0.431373, 1)
