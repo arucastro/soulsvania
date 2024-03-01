@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cxbqeccuvyvvs"]
+[gd_scene load_steps=20 format=3 uid="uid://cxbqeccuvyvvs"]
 
 [ext_resource type="Texture2D" uid="uid://cxdvroncs88q6" path="res://assets/tile/terrain/floor_autotile.png" id="1_yrg1x"]
 [ext_resource type="Texture2D" uid="uid://co0043j738cxk" path="res://assets/tile/decoration/fence_1.png" id="2_ajbtg"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bsvw21c47s4iu" path="res://assets/tile/decoration/rock_3.png" id="7_ak85k"]
 [ext_resource type="PackedScene" uid="uid://rxeeiuswfa15" path="res://scenes/environment/background.tscn" id="8_7lt3f"]
 [ext_resource type="PackedScene" uid="uid://bj16cc28qqefh" path="res://scenes/environment/mask.tscn" id="9_pql62"]
+[ext_resource type="PackedScene" uid="uid://doiaofjbudbau" path="res://scenes/player/player.tscn" id="10_7nktu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fx0ev"]
 texture = ExtResource("1_yrg1x")
@@ -199,4 +200,6 @@ layer_1/tile_data = PackedInt32Array(196616, 65536, 0, 196617, 131072, 0, 196615
 [node name="Background" parent="." instance=ExtResource("8_7lt3f")]
 
 [node name="Mask" parent="." instance=ExtResource("9_pql62")]
-visible = false
+
+[node name="Player" parent="." instance=ExtResource("10_7nktu")]
+position = Vector2(56, 57)
