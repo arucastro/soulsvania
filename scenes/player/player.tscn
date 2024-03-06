@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://doiaofjbudbau"]
+[gd_scene load_steps=18 format=3 uid="uid://doiaofjbudbau"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_1eq71"]
 [ext_resource type="Texture2D" uid="uid://ky7eirlvwcoa" path="res://assets/player/char_purple.png" id="2_gis26"]
@@ -316,6 +316,23 @@ tracks/0/keys = {
 "values": [80, 81, 82]
 }
 
+[sub_resource type="Animation" id="Animation_7qsf8"]
+resource_name = "wall_slide"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [85, 86]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0cqxr"]
 _data = {
 "RESET": SubResource("Animation_6s1r5"),
@@ -327,7 +344,8 @@ _data = {
 "jump": SubResource("Animation_28hbc"),
 "landing": SubResource("Animation_kj8kf"),
 "run": SubResource("Animation_t25p8"),
-"shield": SubResource("Animation_vuofo")
+"shield": SubResource("Animation_vuofo"),
+"wall_slide": SubResource("Animation_7qsf8")
 }
 
 [node name="Player" type="CharacterBody2D"]
@@ -363,8 +381,12 @@ drag_vertical_enabled = true
 [node name="AttackArea" type="Area2D" parent="."]
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
+visible = false
 position = Vector2(-8, 8.75)
 shape = SubResource("RectangleShape2D_3d873")
 disabled = true
+
+[node name="WallRay" type="RayCast2D" parent="."]
+target_position = Vector2(11, 0)
 
 [connection signal="animation_finished" from="Animation" to="Texture" method="on_animation_finished"]
