@@ -352,7 +352,10 @@ _data = {
 script = ExtResource("1_1eq71")
 speed = 75
 jump_speed = -175
+wall_jump_speed = -150
 player_gravity = 350
+wall_gravity = 150
+wall_impulse_speed = 500
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 visible = false
