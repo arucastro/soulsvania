@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cxbqeccuvyvvs"]
+[gd_scene load_steps=21 format=3 uid="uid://cxbqeccuvyvvs"]
 
 [ext_resource type="Texture2D" uid="uid://cxdvroncs88q6" path="res://assets/tile/terrain/floor_autotile.png" id="1_yrg1x"]
 [ext_resource type="Texture2D" uid="uid://co0043j738cxk" path="res://assets/tile/decoration/fence_1.png" id="2_ajbtg"]
@@ -180,6 +180,11 @@ sources/3 = SubResource("TileSetAtlasSource_ufd86")
 sources/4 = SubResource("TileSetAtlasSource_8vvgg")
 sources/5 = SubResource("TileSetAtlasSource_20rtp")
 
+[sub_resource type="Environment" id="Environment_fpodl"]
+background_mode = 3
+glow_enabled = true
+glow_hdr_threshold = 1.5
+
 [node name="Level" type="Node2D"]
 
 [node name="LevelDesign" type="Node2D" parent="."]
@@ -203,3 +208,6 @@ layer_1/tile_data = PackedInt32Array(196616, 65536, 0, 196617, 131072, 0, 196615
 
 [node name="Player" parent="." instance=ExtResource("10_7nktu")]
 position = Vector2(56, 57)
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fpodl")

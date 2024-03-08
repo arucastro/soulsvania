@@ -456,6 +456,7 @@ disabled = true
 target_position = Vector2(11, 0)
 
 [node name="Light" type="PointLight2D" parent="."]
+color = Color(1, 1, 2, 1)
 energy = 0.8
 texture = ExtResource("4_fdj7c")
 texture_scale = 0.4
