@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://doiaofjbudbau"]
+[gd_scene load_steps=23 format=3 uid="uid://doiaofjbudbau"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_1eq71"]
 [ext_resource type="Texture2D" uid="uid://ky7eirlvwcoa" path="res://assets/player/char_purple.png" id="2_gis26"]
 [ext_resource type="Script" path="res://scripts/player/player_texture.gd" id="3_hkhrm"]
 [ext_resource type="Texture2D" uid="uid://seb8bo2m2sbg" path="res://assets/effect/light.png" id="4_fdj7c"]
+[ext_resource type="Script" path="res://scripts/player/player_stats.gd" id="5_t0jsr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a12g8"]
 size = Vector2(12, 30.5)
@@ -466,5 +467,8 @@ libraries = {
 "": SubResource("AnimationLibrary_35cyg")
 }
 autoplay = "light_animation"
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("5_t0jsr")
 
 [connection signal="animation_finished" from="Animation" to="Texture" method="on_animation_finished"]
